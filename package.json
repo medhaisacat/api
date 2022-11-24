@@ -1,0 +1,27 @@
+{
+  "name": "vechain-thor-server",
+  "version": "1.0.0",
+  "description": "An intermediate server that connects with a veChain Thor node to perform operations via REST API's",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medhasn/vechain-thor-server.git"
+  },
+  "keywords": [
+    "vechain",
+    "thor"
+  ],
+  "author": "Medha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medhasn/vechain-thor-server/issues"
+  },
+  "homepage": "https://github.com/medhasn/vechain-thor-server#readme",
+  "dependencies": {
+    "thorify": "^1.6.2",
+    "web3": "^1.8.1"
+  }
+}
