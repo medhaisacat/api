@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/medhasn/vechain-thor-server#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "thorify": "^1.6.2",
     "web3": "^1.8.1"
   }
