@@ -6,20 +6,20 @@ const constants = require("./constants");
 // Instantiate web3 with thorify
 const web3 = thorify(new Web3(), constants.nodeEndpoints.public);
 
-var send = async function() {
+var send = async function(privateKey, senderAddress, receiverAddress, amount) {
 
   return new Promise((resolve, reject) => {
     // Initiate the web3 instance with private key of wallet
-    web3.eth.accounts.wallet.add(constants.test.privateKey)
+    web3.eth.accounts.wallet.add(privateKey)
     
-    web3.eth.getBalance(constants.test.senderAddress).then(result => {
+    web3.eth.getBalance(senderAddress).then(result => {
       console.log(result)
     })
 
     web3.eth.sendTransaction({
-        from: constants.test.senderAddress,
-        to: constants.test.receiverAddress,
-        value: constants.test.amount,
+        from: senderAddress,
+        to: receiverAddress,
+        value: amount,
     })
     .on("sending", obj => {
       console.log("Sending", obj);
