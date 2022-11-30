@@ -4,7 +4,7 @@
 
 // Node endpoints
 const nodeEndpoints = {
-    // IPEP where my test node is deployed
+    // IPEP where test node is deployed
     self: "http://34.125.171.95:8669",
 
     // Public node synced woth test network
