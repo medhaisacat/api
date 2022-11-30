@@ -1,8 +1,23 @@
+const constants = require("./constants")
 const transactions = require("./transaction");
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const express = require("express");
 const cors = require('cors')
 const app = express();
+
+
+// Get server endpoint where veChain Thor node is hosted
+var getServerEndpoint = function () {
+    switch(process.argv[2]) {
+        case 'self': 
+            return constants.nodeEndpoints.self;
+        case 'public':
+            return constants.nodeEndpoints.public;
+        default: 
+            // Setting public end point as default for availability
+            return constants.nodeEndpoints.public;
+    }
+}
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -14,8 +29,8 @@ app.get('/', (request, response) => {
 });
 
 app.post('/transactions', (request, response) => {
-    console.log("REQUEST =", request.body);
-    transactions.send(request.body.privateKey, 
+    transactions.send(getServerEndpoint(),
+                        request.body.privateKey, 
                         request.body.senderAddress,
                         request.body.receiverAddress,
                         request.body.amount)
