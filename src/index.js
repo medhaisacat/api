@@ -45,3 +45,6 @@ app.post('/transactions', (request, response) => {
 })
 
 app.listen(8080);
+
+// For testing
+module.exports = app;

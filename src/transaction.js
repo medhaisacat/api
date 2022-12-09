@@ -23,7 +23,7 @@ var web3 = instantiate(endpoint);
     web3.eth.sendTransaction({
         from: senderAddress,
         to: receiverAddress,
-        value: amount,
+        value: web3.utils.toBN(amount)
     })
     .on("sending", obj => {
       console.log("Sending", obj);
