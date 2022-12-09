@@ -19,7 +19,6 @@ var web3 = instantiate(endpoint);
     web3.eth.getBalance(senderAddress).then(result => {
       console.log(result)
     })
-
     web3.eth.sendTransaction({
         from: senderAddress,
         to: receiverAddress,

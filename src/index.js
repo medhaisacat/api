@@ -37,6 +37,7 @@ app.post('/transactions', (request, response) => {
         .then(transactionHash => {
             console.log(JSON.stringify({transactionHash: transactionHash}));
             response.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+            response.set('Content-Type', 'application/json');
             response.send(JSON.stringify({transactionHash: transactionHash}));
         })
         .catch(error => {
